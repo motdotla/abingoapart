@@ -1,0 +1,43 @@
+%h1= @game.title
+
+%p 
+  You are playing bingo! 
+  %strong
+    This page will auto-refresh every couple seconds.
+
+%p 
+  (There are
+  = @game.cards.count
+  other bingo cards being played.)
+
+%p 
+  The last call was
+  %strong
+    = @game.calls.last.column_number rescue "missing"
+  
+%table.bingocard
+  %tr
+    %th
+      B
+    %th
+      I
+    %th
+      N
+    %th
+      G
+    %th
+      O
+  / have to fix this otherwise it's totally random. store in session.
+  - count = 0
+  - 5.times do
+    %tr
+      - @game.allowed_columns.each do |column|
+        %td
+          - number = @card.numbers[count]
+          - count += 1
+          / - number = @game.allowed_numbers[rand(@game.allowed_numbers.length-1)]
+          - if @game.calls.map(&:column_number).include?("#{column}#{number}")
+            %strike
+              = number
+          - else
+            = number

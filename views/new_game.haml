@@ -1,0 +1,10 @@
+- if @game
+  %p 
+    You created a new game titled:
+    = @game.title
+
+%h1 Create a new game
+
+%form{:id => "new_game", :method => "POST", :action => "/create/a/new/game"}
+  %input{:type => "text", :id => "title", :name => "game[title]"}
+  %input{:type => "submit", :value => "Create", :id => "submit_btn"}

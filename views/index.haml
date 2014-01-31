@@ -1,0 +1,14 @@
+%h1 Bingo!
+
+%h2 Games
+
+- if @games.empty?
+  %p
+    %a{:href => "/new/game"}
+      New Game
+%ul
+  - @games.each do |game|
+    %li
+      = game.title
+      %a{:href => "/games/#{game.id}"}
+        Join

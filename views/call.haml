@@ -1,0 +1,11 @@
+%h1 Call
+
+%p 
+  %a{:href => "/games/#{@game.id}/call"}
+    Refresh 
+  this page to create a new call.
+
+%p 
+  You just called:
+  %strong
+    = @call.column_number

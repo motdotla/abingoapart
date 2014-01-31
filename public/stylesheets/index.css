@@ -1,0 +1,14 @@
+.bingocard {
+  width: 700px;
+  font-size: 28px;
+  border-collapse: collapse;
+}
+.bingocard th, .bingocard td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+strike {
+  color: red;
+}

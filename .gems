@@ -1,0 +1,5 @@
+sinatra --version '>= 0.9.4'
+haml
+dm-sqlite-adapter
+dm-postgres-adapter
+data_mapper
